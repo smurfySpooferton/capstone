@@ -111,8 +111,7 @@ build/
 prod/
 
 # Secrets
-mnemonic
-infura
+secrets/
 
 # Project
 src/dapp/config.json
