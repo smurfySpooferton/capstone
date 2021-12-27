@@ -17,7 +17,7 @@ To install, download or clone the repo, then:
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/zokrates.sh`
 - Within the created container: `sh code/run.sh`
-- Copy the contents of `verifier.sol` (generated in your container) to your `contracts/SolnSquareVerifier.sol`
+- `sh shell/zokcp.sh` (Only one zokrates container may be running)
 
 ## Test
 
