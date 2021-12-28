@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-import 'openzeppelin-solidity/contracts/utils/Address.sol';
+import 'openzeppelin-solidity/contracts/utils/Address.sol' as AddressTool;
 import 'openzeppelin-solidity/contracts/drafts/Counters.sol';
 import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
 import 'openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol';
@@ -15,9 +15,9 @@ contract Ownable {
     //  5) create an event that emits anytime ownerShip is transfered (including in the constructor)
 
     function transferOwnership(address newOwner) public onlyOwner {
-        // TODO add functionality to transfer control of the contract to a newOwner.
-        // make sure the new owner is a real address
-
+        // DONE add functionality to transfer control of the contract to a newOwner.
+        require(!AddressTool.isContract(newOwner), "New owner is a contract"); // Not safe to assume this is an externally owned address;
+        transferOwnership(newOwner);
     }
 }
 

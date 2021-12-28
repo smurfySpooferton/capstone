@@ -1,7 +1,7 @@
 {
   "name": "capstone",
   "version": "1.0.0",
-  "description": "",
+  "description": "The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product.",
   "main": "index.js",
   "scripts": {
     "dev": "lite-server",
@@ -14,11 +14,23 @@
     "lite-server": "2.4.0"
   },
   "dependencies": {
+    "ganache-cli": "^6.12.2",
     "openzeppelin-solidity": "^2.2.0",
-    "truffle": "^5.4.25",
-    "truffle-hdwallet-provider": "1.0.17",
-    "web3": "1.6.1",
     "solc": "0.8.11",
-    "solc-js": "0.5.5"
-  }
+    "solc-js": "0.5.5",
+    "truffle": "^5.4.26",
+    "truffle-hdwallet-provider": "1.0.17",
+    "web3": "1.6.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smurfySpooferton/capstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smurfySpooferton/capstone/issues"
+  },
+  "homepage": "https://github.com/smurfySpooferton/capstone#readme"
 }
