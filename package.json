@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "ganache-cli": "^6.12.2",
-    "openzeppelin-solidity": "^2.2.0",
+    "openzeppelin-solidity": "^4.4.1",
     "solc": "0.8.11",
     "solc-js": "0.5.5",
     "truffle": "^5.4.26",

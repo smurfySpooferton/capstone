@@ -6,7 +6,6 @@ The capstone will build upon the knowledge you have gained in the course in orde
 Install:
 - Git
 - Node
-- Ganache-cli (`npm install -g ganache-cli`)
 - Docker
 - Clone the Project Repo (`git clone https://github.com/smurfySpooferton/capstone.git`)
 
@@ -19,7 +18,7 @@ To install, download or clone the repo, then:
 - `truffle compile`
 
 ## Zokrates
-- Make sure your secrets folder (`capstone/secrets`) exists
+- Make sure your secrets folder (`capstone/secrets`), created by setup script, exists
 - Start Docker
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/zokrates.sh`
