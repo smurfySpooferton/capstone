@@ -1,12 +1,10 @@
 // migrating the appropriate contracts
-let Verifier = artifacts.require("./contracts/Verifier.sol");
-let SolnSquareVerifier = artifacts.require("./contracts/SolnSquareVerifier.sol");
-let Oraclize = artifacts.require("./contracts/Oraclize.sol");
-let Mintable = artifacts.require("./contracts/ERC721Mintable.sol");
+let Verifier = artifacts.require("./Verifier.sol");
+let SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
 
-module.exports = function(deployer) {
-  deployer.deploy(Verifier);
-  deployer.deploy(SolnSquareVerifier);
-  deployer.deploy(Oraclize);
-  deployer.deploy(Mintable);
-};
+module.exports = function (deployer) {
+  deployer.deploy(Verifier)
+      .then(() => {
+        return deployer.deploy(SolnSquareVerifier, Verifier.address)
+      });
+}
