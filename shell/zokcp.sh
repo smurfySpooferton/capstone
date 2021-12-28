@@ -2,7 +2,7 @@
 
 projectRoot=`pwd`/
 
-containerId=$(docker ps -l --filter "name=elastic_yalow" -q) #assume there is only one zokrates container running
+containerId=$(docker ps -l --filter "ancestor=zokrates/zokrates" -q) #assume there is only one zokrates container running
 containerPath=/home/zokrates/
 
 docker cp $containerId:$containerPath"abi.json" $projectRoot"secrets/"

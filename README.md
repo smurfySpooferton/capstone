@@ -2,30 +2,35 @@
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
 
-## Install
+## Prerequisits
+Install:
+- Git
+- Node
+- Ganache-cli (`npm install -g ganache-cli`)
+- Docker
+- Clone the Project Repo (`git clone https://github.com/smurfySpooferton/capstone.git`)
 
+## Install
 To install, download or clone the repo, then:
 
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/setup.sh` Follow the instructions and enter your mnemonic and infura key
 - `npm install`
-- `truffle init`
 - `truffle compile`
 
 ## Zokrates
-
+- Make sure your secrets folder (`capstone/secrets`) exists
+- Start Docker
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/zokrates.sh`
 - Within the created container: `sh code/run.sh`
 - `sh shell/zokcp.sh` (Only one zokrates container may be running)
 
 ## Test
-
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/ganache.sh` (Starting ganache cli with your mnemonic)
-- 
 
-# Project Resources
+## Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
