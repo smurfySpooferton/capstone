@@ -28,6 +28,7 @@ To install, download or clone the repo, then:
 ## Test
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/ganache.sh` (Starting ganache cli with your mnemonic)
+- `truffle test`
 
 ## Contract addresses
 - Migrations: 0xb7F49e24e1cf5061D6BD2419F29DC23c372e79B2
@@ -36,6 +37,10 @@ To install, download or clone the repo, then:
 
 ## OpenSea listing
 - https://testnets.opensea.io/assets/0x6954a6ec41329c0f67e13491990bdbea581df586/1
+
+## ABI
+
+Abi files can be found in the abi folder.
 
 ## Project Resources
 
