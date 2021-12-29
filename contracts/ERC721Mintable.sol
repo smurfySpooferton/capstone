@@ -494,7 +494,7 @@ contract ERC721Enumerable is ERC165, ERC721 {
     }
 }
 
-contract ERC721Metadata is ERC721Enumerable, usingProvable {
+abstract contract ERC721Metadata is ERC721Enumerable, usingProvable {
     using SafeMath for uint256;
 
     // DONE: Create private vars for token _name, _symbol, and _baseTokenURI (string)
