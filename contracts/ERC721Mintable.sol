@@ -562,7 +562,7 @@ contract ERC721Metadata is ERC721Enumerable, usingProvable {
 //      -returns a true boolean upon completion of the function
 //      -calls the superclass mint and setTokenURI functions
 
-contract HouseERC721Token is ERC721Metadata("Udacity Blockchain Developer Capstone", "UBDC", "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") {
+contract UdacityBlockchainDeveloperCapstone is ERC721Metadata("Udacity Blockchain Developer Capstone", "UBDC", "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/") {
     //tokenUri will be built; so it is not neccessary
     function mint(address to, uint256 tokenId) public onlyOwner returns(bool) {
         super._mint(to, tokenId);

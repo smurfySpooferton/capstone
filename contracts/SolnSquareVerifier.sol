@@ -1,40 +1,59 @@
 pragma solidity ^0.8.0;
 
-contract SolnSquareVerifier {
+import './ERC721Mintable.sol';
+import './Verifier.sol';
+
+// DONE define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
+interface TxVerifier {
+    function verifyTx(Verifier.Proof memory proof, uint[2] memory input) external view returns (bool r);
 }
-// TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
 
+// DONE define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
+contract SolnSquareVerifier is UdacityBlockchainDeveloperCapstone {
+    // DONE define a solutions struct that can hold an index & an address
+    struct Solution {
+        uint256 index;
+        address account;
+    }
 
+    // DONE define an array of the above struct
+    Solution[] private _solutions;
 
-// TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
+    // DONE define a mapping to store unique solutions submitted
+    mapping(bytes32 => Solution) private _uniqueSolutions;
 
+    // DONE Create an event to emit when a solution is added
+    event DidAddSolution(address account);
 
+    TxVerifier private verifier;
 
-// TODO define a solutions struct that can hold an index & an address
+    constructor(address verifierAddress) {
+        verifier = TxVerifier(verifierAddress);
+    }
 
+    // DONE Create a function to add the solutions to the array and emit the event
+    function addSolution(bytes32 solutionId, uint256 tokenId, address account) public {
+        Solution memory solution = Solution({index: tokenId, account: account });
+        _solutions.push(solution);
+        _uniqueSolutions[solutionId] = solution;
+        emit DidAddSolution(solution.account);
+    }
 
-// TODO define an array of the above struct
+    function getSolutionID(Verifier.Proof memory proof, uint[2] memory input) private pure returns(bytes32) {
+        return keccak256(abi.encodePacked(proof.a.X, proof.a.Y, proof.b.X, proof.b.Y, proof.c.X, proof.c.Y, input));
+    }
 
-
-// TODO define a mapping to store unique solutions submitted
-
-
-
-// TODO Create an event to emit when a solution is added
-
-
-
-// TODO Create a function to add the solutions to the array and emit the event
-
-
-
-// TODO Create a function to mint new NFT only after the solution has been verified
-//  - make sure the solution is unique (has not been used before)
-//  - make sure you handle metadata as well as tokenSuplly
-
-  
-
-
+    // DONE Create a function to mint new NFT only after the solution has been verified
+    //  - make sure the solution is unique (has not been used before)
+    //  - make sure you handle metadata as well as tokenSuplly
+    function mintNFT(address to, uint256 tokenId, Verifier.Proof memory proof, uint[2] memory input) public {
+        bytes32 solutionId = getSolutionID(proof, input);
+        require(_uniqueSolutions[solutionId].account == address(0), "Solution not unique");
+        require(verifier.verifyTx(proof, input), "Solution not verified");
+        addSolution(solutionId, tokenId, to);
+        mint(to, tokenId);
+    }
+}
 
 
 
