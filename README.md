@@ -29,6 +29,14 @@ To install, download or clone the repo, then:
 - Make sure to call all shell scripts from the project root (capstone folder)
 - `sh shell/ganache.sh` (Starting ganache cli with your mnemonic)
 
+## Contract addresses
+- Migrations: 0xb7F49e24e1cf5061D6BD2419F29DC23c372e79B2
+- Verifier: 0x272685720Ab03eb6867d27bbEB8c1961F4896069
+- SolnSquareVerifier: 0x6954A6EC41329c0F67E13491990BDbEA581dF586
+
+## OpenSea listing
+- https://testnets.opensea.io/assets/0x6954a6ec41329c0f67e13491990bdbea581df586/1
+
 ## Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
