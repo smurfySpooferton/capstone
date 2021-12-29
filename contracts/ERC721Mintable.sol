@@ -27,6 +27,10 @@ abstract contract Ownable {
         return msg.sender == _owner;
     }
 
+    function owner() public view returns(address) {
+        return _owner;
+    }
+
     //  DONE
     //  1) create a private '_owner' variable of type address with a public getter function
     //  2) create an internal constructor that sets the _owner var to the creater of the contract 
@@ -287,6 +291,7 @@ contract ERC721 is Pausable, ERC165 {
         // DONE: update token counts & transfer ownership of the token ID
         _ownedTokensCount[from].decrement();
         _ownedTokensCount[to].increment();
+        _tokenOwner[tokenId] = to;
 
         // DONE: emit correct event
         emit Transfer(from, to, tokenId);
@@ -536,7 +541,7 @@ abstract contract ERC721Metadata is ERC721Enumerable, usingProvable {
     }
 
     function tokenURI(uint256 tokenId) external view returns (string memory) {
-        require(_exists(tokenId));
+        require(_exists(tokenId), "Token does not exist");
         return _tokenURIs[tokenId];
     }
 

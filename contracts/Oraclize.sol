@@ -1026,22 +1026,23 @@ contract usingProvable {
     }
 
     function uint2str(uint _i) internal pure returns (string memory _uintAsString) {
-        if (_i == 0) {
-            return "0";
+        bytes32 result = uint2bytes(_i);
+        _uintAsString = string(abi.encodePacked(result));
+        return _uintAsString;
+    }
+    //Teken from https://github.com/pipermerriam/ethereum-string-utils to work with solc 0.8.0
+    function uint2bytes(uint v) internal pure returns (bytes32 ret) {
+        if (v == 0) {
+            ret = '0';
         }
-        uint j = _i;
-        uint len;
-        while (j != 0) {
-            len++;
-            j /= 10;
+        else {
+            while (v > 0) {
+                ret = bytes32(uint(ret) / (2 ** 8));
+                ret |= bytes32(((v % 10) + 48) * 2 ** (8 * 31));
+                v /= 10;
+            }
         }
-        bytes memory bstr = new bytes(len);
-        uint k = len - 1;
-        while (_i != 0) {
-            bstr[k--] = bytes1(uint8(48 + _i % 10));
-            _i /= 10;
-        }
-        return string(bstr);
+        return ret;
     }
 
     function stra2cbor(string[] memory _arr) internal pure returns (bytes memory _cborEncoding) {

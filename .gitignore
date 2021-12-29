@@ -119,3 +119,6 @@ secrets/
 # Project
 src/dapp/config.json
 src/server/config.json
+
+# Project generated files
+test/data/proof.json

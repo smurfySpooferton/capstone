@@ -33,25 +33,26 @@ contract SolnSquareVerifier is UdacityBlockchainDeveloperCapstone {
 
     // DONE Create a function to add the solutions to the array and emit the event
     function addSolution(bytes32 solutionId, uint256 tokenId, address account) public {
+        require(_uniqueSolutions[solutionId].account == address(0), "Solution not unique");
         Solution memory solution = Solution({index: tokenId, account: account });
         _solutions.push(solution);
         _uniqueSolutions[solutionId] = solution;
         emit DidAddSolution(solution.account);
     }
 
-    function getSolutionID(Verifier.Proof memory proof, uint[2] memory input) private pure returns(bytes32) {
+    function getSolutionID(Verifier.Proof memory proof, uint[2] memory input) public pure returns(bytes32) {
         return keccak256(abi.encodePacked(proof.a.X, proof.a.Y, proof.b.X, proof.b.Y, proof.c.X, proof.c.Y, input));
     }
 
     // DONE Create a function to mint new NFT only after the solution has been verified
     //  - make sure the solution is unique (has not been used before)
     //  - make sure you handle metadata as well as tokenSuplly
-    function mintNFT(address to, uint256 tokenId, Verifier.Proof memory proof, uint[2] memory input) public {
+    function mintNft(address to, uint256 tokenId, Verifier.Proof memory proof, uint[2] memory input) public {
         bytes32 solutionId = getSolutionID(proof, input);
         require(_uniqueSolutions[solutionId].account == address(0), "Solution not unique");
         require(verifier.verifyTx(proof, input), "Solution not verified");
         addSolution(solutionId, tokenId, to);
-        mint(to, tokenId);
+        super.mint(to, tokenId);
     }
 }
 
