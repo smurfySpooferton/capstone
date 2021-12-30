@@ -31,12 +31,16 @@ To install, download or clone the repo, then:
 - `truffle test`
 
 ## Contract addresses
-- Migrations: 0xb7F49e24e1cf5061D6BD2419F29DC23c372e79B2
-- Verifier: 0x272685720Ab03eb6867d27bbEB8c1961F4896069
-- SolnSquareVerifier: 0x6954A6EC41329c0F67E13491990BDbEA581dF586
+- Migrations: 0xF74aBE3E7251dcE78ef210F7A9F1e258f0240f32
+- Verifier: 0xbdA0d4d88A138Ce440a84B254ec6399b06f8F349
+- SolnSquareVerifier: 0xADAb2549d0CfA8B34AFc97AC66717bAA67E79AF3
 
 ## OpenSea listing
-- https://testnets.opensea.io/assets/0x6954a6ec41329c0f67e13491990bdbea581df586/1
+- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/1
+- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/2
+- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/3
+- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/4
+- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/5
 
 ## ABI
 
