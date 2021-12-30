@@ -17,7 +17,7 @@ contract('SolnSquareVerifier Tests', async (accounts) => {
         let { proof, inputs } = require('./data/proof.json');
         let added = 0;
         try {
-            let solutionId = await contract.getSolutionID(proof, inputs);
+            let solutionId = await contract.getSolutionID(1, proof, inputs);
             await contract.addSolution(solutionId, 1, owner);
             added += 1;
             await contract.addSolution(solutionId, 1, owner);
