@@ -40,7 +40,7 @@ To install, download or clone the repo, then:
 - https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/2
 - https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/3
 - https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/4
-  https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/5
+- https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/5
 
 ## ABI
 
