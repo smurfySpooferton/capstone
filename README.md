@@ -31,16 +31,16 @@ To install, download or clone the repo, then:
 - `truffle test`
 
 ## Contract addresses
-- Migrations: 0xF74aBE3E7251dcE78ef210F7A9F1e258f0240f32
-- Verifier: 0xbdA0d4d88A138Ce440a84B254ec6399b06f8F349
-- SolnSquareVerifier: 0xADAb2549d0CfA8B34AFc97AC66717bAA67E79AF3
+- Migrations: 0x6Ce09f75166367a8f1BA6264cb42338Cba5127D0
+- Verifier: 0x5cb8BD204b56D0B0C89Cb254527c4080BD8ff4A8
+- SolnSquareVerifier: 0x57170f854ED0C82097596Dde927Ece2775aDc608
 
 ## OpenSea listing
-- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/1
-- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/2
-- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/3
-- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/4
-- https://testnets.opensea.io/assets/0xadab2549d0cfa8b34afc97ac66717baa67e79af3/5
+- https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/1
+- https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/2
+- https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/3
+- https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/4
+  https://testnets.opensea.io/assets/0x57170f854ed0c82097596dde927ece2775adc608/5
 
 ## ABI
 
