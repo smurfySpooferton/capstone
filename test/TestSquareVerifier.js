@@ -15,7 +15,7 @@ contract('Verifier Tests', async (accounts) => {
     // Test verification with correct proof
     // - use the contents from proof.json generated from zokrates steps
     it('Test verification with correct proof', async function () {
-        let { proof, inputs } = require('./data/proof.json');
+        let { proof, inputs } = require('./data/proof1.json');
         let result;
         try {
             result = await contract.verifyTx.call(proof, inputs);

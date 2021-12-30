@@ -196,7 +196,7 @@ contract ERC721 is Pausable, ERC165 {
 
     function getApproved(uint256 tokenId) public view returns (address) {
         // DONE return token approval if it exists
-        require(_tokenApprovals[tokenId] != address(0), "Approved not set");
+        require(_exists(tokenId), "Token already exists");
         return _tokenApprovals[tokenId];
     }
 

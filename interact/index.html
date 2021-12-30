@@ -20,6 +20,19 @@
 <br><label for="tokenId">Token ID:</label><input type="text" id="tokenId"></input>
 <br><br><button id="mintButton" onclick="App.mint()">Mint Token</button>
 
+<h1>Get NFT</h1>
+<br><label for="getTokenId">Token ID:</label><input type="text" id="getTokenId"></input>
+<br><br><button id="getTokenButton" onclick="App.ownerOf()">Get Token</button>
+
+
+<h1>Transfer NFT</h1>
+<br><label for="transferTokenId">Token ID:</label><input type="text" id="transferTokenId"></input>
+<br><label for="transferTokenOwner">Token Owner:</label><input type="text" id="transferTokenOwner"></input>
+<br><label for="transferTokenReceiver">Token Receiver:</label><input type="text" id="transferTokenReceiver"></input>
+<br><br><button id="transferTokenButton" onclick="App.transfer()">Transfer Token</button>
+
+<br><br><br><br><div id="status"></div>
+
 <script src="index.js"></script>
 </body>
 </html>

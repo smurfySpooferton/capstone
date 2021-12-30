@@ -14,10 +14,10 @@ contract('SolnSquareVerifier Tests', async (accounts) => {
     });
     // Test if a new solution can be added for contract - SolnSquareVerifier
     it('Test if a new solution can be added for contract - SolnSquareVerifier', async function () {
-        let { proof, inputs } = require('./data/proof.json');
+        let { proof, inputs } = require('./data/proof1.json');
         let added = 0;
         try {
-            let solutionId = await contract.getSolutionID(1, proof, inputs);
+            let solutionId = await contract.getSolutionID(proof, inputs);
             await contract.addSolution(solutionId, 1, owner);
             added += 1;
             await contract.addSolution(solutionId, 1, owner);
@@ -30,7 +30,7 @@ contract('SolnSquareVerifier Tests', async (accounts) => {
 
     // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
     it('Test if an ERC721 token can be minted for contract - SolnSquareVerifier', async function () {
-        let { proof, inputs } = require('./data/proof.json');
+        let { proof, inputs } = require('./data/proof1.json');
         let newOwner = accounts[2];
         let balance = 0;
         try {
